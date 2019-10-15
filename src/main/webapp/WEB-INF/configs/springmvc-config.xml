@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan
+		base-package="edu.vinaenter" />
+	<mvc:annotation-driven />
+	<mvc:resources location="/WEB-INF/templates/admin/"
+		mapping="/admin/**" />
+	<mvc:resources location="/WEB-INF/templates/cland/"
+		mapping="/cland/**" />
+	<mvc:resources location="/WEB-INF/templates/auth/"
+		mapping="/auth/**" />
+	<mvc:resources location="/WEB-INF/templates/"
+		mapping="/resources/**" />
+	<mvc:resources location="/WEB-INF/views/"
+		mapping="/views/**" />
+	<mvc:resources location="/WEB-INF/uploads/"
+		mapping="/uploads/**" />
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/layouts/admin_layout.xml</value>
+				<value>/WEB-INF/layouts/cland_layout.xml</value>
+				<value>/WEB-INF/layouts/auth_layout.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolverTiles"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000000" />
+	</bean>
+</beans>

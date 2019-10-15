@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	 <definition name="cland.layout" template="/WEB-INF/templates/cland/inc/master.jsp">
+	 	<put-attribute name="title" value="Home - Vinaenter EDU" />
+	 	<put-attribute name="header" value="/WEB-INF/templates/cland/inc/header.jsp" />
+	 	<put-attribute name="content" value="" />
+	 	<put-attribute name="sidebar" value="/WEB-INF/templates/cland/inc/sidebar.jsp" />
+	 	<put-attribute name="footer" value="/WEB-INF/templates/cland/inc/footer.jsp" />
+	 </definition>
+	
+	
+	 <!-- name_project.name_class.name_method -->
+	 <definition name="cland.cland.index" extends="cland.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/cland/index.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.cland.cat" extends="cland.layout" >
+	 	<put-attribute name="title" value="Category - Vinaenter" />
+	 	<put-attribute name="content" value="/WEB-INF/views/cland/cat.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.cland.detail" extends="cland.layout" >
+	 	<put-attribute name="title" value="Single - Vinaenter" />
+	 	<put-attribute name="content" value="/WEB-INF/views/cland/single.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.cland.contact" extends="cland.layout" >
+	 	<put-attribute name="title" value="Contact - Vinaenter" />
+	 	<put-attribute name="content" value="/WEB-INF/views/cland/contact.jsp" />
+	 </definition>
+	 
+</tiles-definitions>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	 <definition name="cland.admin.layout" template="/WEB-INF/templates/admin/inc/master.jsp">
+	 	<put-attribute name="title" value="Home - Cland [Vinaenter EDU]" />
+	 	<put-attribute name="header" value="/WEB-INF/templates/admin/inc/header.jsp" />
+	 	<put-attribute name="sidebar" value="/WEB-INF/templates/admin/inc/sidebar.jsp" />
+	 	<put-attribute name="content" value="" />
+	 	<put-attribute name="footer" value="/WEB-INF/templates/admin/inc/footer.jsp" />
+	 	<put-attribute name="js" value="" />
+	 	<put-attribute name="stylesheets" value="" />
+	 </definition>
+	
+	
+	 <definition name="cland.admin.index" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/index/index.jsp" />
+	 	<put-attribute name="stylesheets" value="/WEB-INF/views/admin/index/putstyle.jsp" />
+	 	<put-attribute name="js" value="/WEB-INF/views/admin/index/putjs.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.cat.index" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/cat/index.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.cat.add" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/cat/add.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.cat.edit" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/cat/edit.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.lands.index" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/lands/index.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.lands.add" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/lands/add.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.lands.edit" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/lands/edit.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.users.index" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/users/index.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.users.add" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/users/add.jsp" />
+	 </definition>
+	 
+	 <definition name="cland.admin.users.edit" extends="cland.admin.layout" >
+	 	<put-attribute name="content" value="/WEB-INF/views/admin/users/edit.jsp" />
+	 </definition>
+	 
+	 
+</tiles-definitions>

@@ -17,21 +17,21 @@
 				href="http://vinaenter.edu.vn" title="">www.vinaenter.edu.vn</a>
 		</p>
 
-		<form action="${pageContext.request.contextPath }/contact" method="POST">
+		<form action="${pageContext.request.contextPath }/contact/add" method="POST">
 			<p>
-				<form:errors path="contact.fullname" cssStyle="color:red"/>
+				<form:errors path="contact.fullname" cssStyle="color:red; font-size: 20px"/> <br>
 				<input type="text" name="fullname" class="wpcf7-text" placeholder="Họ tên *" />
 			</p>
 			<p>
-				<form:errors path="contact.email" cssStyle="color:red"/>
+				<form:errors path="contact.email" cssStyle="color:red; font-size: 20px"/> <br>
 				<input type="text" name="email" class="wpcf7-email" placeholder="Email *" />
 			</p>
 			<p>
-				<form:errors path="contact.subject" cssStyle="color:red"/>
+				<form:errors path="contact.subject" cssStyle="color:red; font-size: 20px"/> <br>
 				<input type="text" name="subject" class="wpcf7-text" placeholder="Chủ đề *" />
 			</p>
 			<p>
-				<form:errors path="contact.content" cssStyle="color:red"/>
+				<form:errors path="contact.content" cssStyle="color:red; font-size: 20px"/> <br>
 				<textarea class="wpcf7-textarea" name="content" placeholder="Nội dung *"></textarea>
 			</p>
 			<p>

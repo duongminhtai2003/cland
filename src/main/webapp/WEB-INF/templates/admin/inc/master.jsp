@@ -32,10 +32,8 @@
     </div>
 
 	<tiles:insertAttribute name="footer" />
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
     <script src="${pageContext.request.contextPath}/admin/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="${pageContext.request.contextPath}/admin/bootstrap/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/admin/js/custom.js"></script>
     

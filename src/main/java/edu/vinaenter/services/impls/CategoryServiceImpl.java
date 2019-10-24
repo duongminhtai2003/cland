@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.vinaenter.daos.CategoryDao;
+import edu.vinaenter.dto.CategoryDTO;
 import edu.vinaenter.models.Category;
 import edu.vinaenter.services.CategoryService;
 
@@ -15,7 +16,7 @@ public class CategoryServiceImpl implements CategoryService {
 	private CategoryDao catDao;
 	
 	@Override
-	public List<Category> findAll() {
+	public List<CategoryDTO> findAll() {
 		// TODO Auto-generated method stub
 		return catDao.findAll();
 	}
@@ -52,9 +53,15 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public List<Category> findCategoryHot() {
+	public List<CategoryDTO> findCategoryHot() {
 		// TODO Auto-generated method stub
 		return catDao.findCategoryHot();
+	}
+
+	@Override
+	public int countPagination(String name) {
+		// TODO Auto-generated method stub
+		return catDao.countPagination(name);
 	}
 
 }

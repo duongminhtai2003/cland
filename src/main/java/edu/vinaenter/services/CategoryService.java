@@ -2,11 +2,12 @@ package edu.vinaenter.services;
 
 import java.util.List;
 
+import edu.vinaenter.dto.CategoryDTO;
 import edu.vinaenter.models.Category;
 
 public interface CategoryService {
 	
-	List<Category> findAll();
+	List<CategoryDTO> findAll();
 	
 	int addItem(Category cat);
 	
@@ -20,7 +21,9 @@ public interface CategoryService {
 
 	int countPagination();
 	
-	List<Category> findCategoryHot();
+	int countPagination(String name);
+	
+	List<CategoryDTO> findCategoryHot();
 	
 	// abstract class : muốn bắt buộc các class kế thừa phải override lại
 	// các method cũng như có những method chung

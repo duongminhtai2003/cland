@@ -6,9 +6,9 @@ import edu.vinaenter.models.Users;
 
 public interface UsersService {
 
-	List<Users> findAll();
+	List<Users> findAllPagination(int offset);
 	
-	List<Users> findAllByStr(String str);
+	List<Users> searchItems(int offset, String str, String option);
 
 	int addItem(Users users);
 	
@@ -17,6 +17,12 @@ public interface UsersService {
 	Users findItemById(int id);
 	
 	int editItem(Users users);
+	
+	int editEnable(int enable, int id);
+
+	int countPagination();
+	
+	int checkUsername(String username);
 	
 	// abstract class : muốn bắt buộc các class kế thừa phải override lại
 	// các method cũng như có những method chung

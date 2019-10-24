@@ -15,15 +15,15 @@ public class UsersServiceImpl implements UsersService {
 	private UsersDao usersDAO;
 
 	@Override
-	public List<Users> findAll() {
+	public List<Users> findAllPagination(int offset) {
 		// TODO Auto-generated method stub
-		return usersDAO.findAll();
+		return usersDAO.findAllPagination(offset);
 	}
 
 	@Override
-	public List<Users> findAllByStr(String str) {
+	public List<Users> searchItems(int offset, String str, String option) {
 		// TODO Auto-generated method stub
-		return usersDAO.findAllByStr(str);
+		return usersDAO.searchItems(offset, str, option);
 	}
 
 	@Override
@@ -48,6 +48,24 @@ public class UsersServiceImpl implements UsersService {
 	public int editItem(Users users) {
 		// TODO Auto-generated method stub
 		return usersDAO.editItems(users);
+	}
+	
+	@Override
+	public int countPagination() {
+		// TODO Auto-generated method stub
+		return usersDAO.countPagination();
+	}
+
+	@Override
+	public int editEnable(int enable, int id) {
+		// TODO Auto-generated method stub
+		return usersDAO.editEnable(enable, id);
+	}
+
+	@Override
+	public int checkUsername(String username) {
+		// TODO Auto-generated method stub
+		return usersDAO.checkUsername(username);
 	}
 
 }

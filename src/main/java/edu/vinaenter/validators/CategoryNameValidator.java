@@ -5,6 +5,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import edu.vinaenter.models.Category;
+import edu.vinaenter.utils.CharacterUtil;
 
 @Component
 public class CategoryNameValidator implements Validator{
@@ -16,7 +17,11 @@ public class CategoryNameValidator implements Validator{
 
 	@Override
 	public void validate(Object object, Errors errors) {
-		//validation for name of category
+		Category cat = (Category) object;
+		if (CharacterUtil.isValidCharacterSpecial(cat.getName())) {   
+			errors.rejectValue("name", null, "Vui lòng không nhập tên chứa các kí tự như: " + CharacterUtil.show());
+			// mong muốn in ra các kí tự để người dùng biết tránh nhập sai tiếp
+		}
 	}
 
 }

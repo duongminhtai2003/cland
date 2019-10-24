@@ -12,10 +12,8 @@ import edu.vinaenter.constants.UrlConstants;
 @RequestMapping(UrlConstants.URL_ADMIN)
 public class AdminIndexController {
 
-
 	@GetMapping(UrlConstants.URL_ADMIN_INDEX)
 	public String index(Principal principal) {
-		System.out.println("Username :" +principal.getName());
 		return "cland.admin.index";
 	}
 	

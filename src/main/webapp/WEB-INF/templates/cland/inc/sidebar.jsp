@@ -7,8 +7,9 @@
 		<h2>Danh mục bất động sản</h2>
 		<ul>
 			<c:forEach items="${listCat}" var="cat">
-				<li class="cat-item"><a
-					href="${pageContext.request.contextPath }/cat/${SlugUtil.makeSlug(cat.name)}-${cat.id }.html">${cat.name }</a>(12)</li>
+				<li class="cat-item">
+					<a href="${pageContext.request.contextPath }/cat/${SlugUtil.makeSlug(cat.catName)}-${cat.id }.html">${cat.catName }</a>(${cat.totalCat })
+				</li>
 			</c:forEach>
 		</ul>
 	</div>
@@ -33,9 +34,9 @@
 		<h2>Danh mục hot</h2>
 		<ul>
 		
-			<c:forEach items="${listCatHot}" var="listCatHot">
+			<c:forEach items="${listCatHot}" var="catHot">
 					<li>
-						<a href="${pageContext.request.contextPath }/cat/${SlugUtil.makeSlug(listCatHot.name)}-${listCatHot.id }.html">${listCatHot.name } <span>(12)</span></a>
+						<a href="${pageContext.request.contextPath }/cat/${SlugUtil.makeSlug(catHot.catName)}-${catHot.id }.html">${catHot.catName } <span>(${catHot.totalCat })</span></a>
 					</li>
 				</c:forEach>
 			

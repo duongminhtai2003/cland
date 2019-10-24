@@ -18,7 +18,7 @@ public interface LandsService {
 	// các method cũng như có những method chung
 	LandsDTO findItemById(int id);
 
-	List<LandsDTO> findAllByStrPagination(String str, int offset);
+	List<LandsDTO> findAllByStrPagination(String str, int offset, String option);
 	
 	List<LandsDTO> findAllById(int id);
 
@@ -30,5 +30,7 @@ public interface LandsService {
 	List<LandsDTO> findItemsHot();
 	
 	List<LandsDTO> findItemsLatest();
+	
+	int delItemByCid(int cid);
 
 }

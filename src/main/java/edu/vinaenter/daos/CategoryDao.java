@@ -8,9 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import edu.vinaenter.constants.CommonConstants;
-import edu.vinaenter.dto.LandsDTO;
+import edu.vinaenter.dto.CategoryDTO;
 import edu.vinaenter.models.Category;
-
 
 @Repository
 public class CategoryDao {
@@ -18,11 +17,12 @@ public class CategoryDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	public List<Category> findAll() {
-		String sql = "SELECT id, name FROM categories ORDER BY id DESC";
-		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Category.class));
+	public List<CategoryDTO> findAll() {
+		String sql = "SELECT c.id, " + "c.name AS catName, " + "COUNT(l.cid) AS totalCat " + "FROM categories as c "
+				+ "LEFT JOIN lands as l " + "ON c.id = l.cid " + "GROUP BY c.id";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(CategoryDTO.class));
 	}
-	
+
 	public int addItems(Category cat) {
 		String sql = "INSERT INTO categories(name) VALUES (?)";
 		return jdbcTemplate.update(sql, new Object[] { cat.getName() });
@@ -37,32 +37,33 @@ public class CategoryDao {
 		String sql = "UPDATE categories SET name = ? WHERE id = ?";
 		return jdbcTemplate.update(sql, new Object[] { cat.getName(), cat.getId() });
 	}
-	
+
 	public Category findItemById(int id) {
 		String sql = "SELECT id, name FROM categories WHERE id = ?";
 		return jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper<>(Category.class));
 	}
-	
+
 	public List<Category> findAllByStr(String str) {
 		String sql = "SELECT id, name FROM categories WHERE name LIKE ? ORDER BY id DESC";
-		return jdbcTemplate.query(sql, new Object[] {"%"+str+"%" },new BeanPropertyRowMapper<>(Category.class));
+		return jdbcTemplate.query(sql, new Object[] { "%" + str + "%" }, new BeanPropertyRowMapper<>(Category.class));
 	}
 
 	public int countPagination() {
 		String sql = "SELECT COUNT(1) AS countCat FROM categories";
 		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
-	
-	public List<Category> findCategoryHot() {
-		String sql = "SELECT DISTINCT c.id, "
-				+ "c.name "
-				+ "FROM categories AS c "
-				+ "INNER JOIN lands AS l "
-				+ "ON c.id = l.cid "
-				+ "ORDER BY l.count_views DESC "
-				+ "LIMIT ?";
-		return jdbcTemplate.query(sql, new Object[] {CommonConstants.DEFAULT_HOT}, new BeanPropertyRowMapper<>(Category.class));
+
+	public int countPagination(String name) {
+		String sql = "SELECT COUNT(1) AS countCat FROM categories WHERE name LIKE ?";
+		return jdbcTemplate.queryForObject(sql, new Object[] { name }, Integer.class);
 	}
 
+	public List<CategoryDTO> findCategoryHot() {
+		String sql = "SELECT DISTINCT c.id, " + "c.name AS catName, " + "COUNT(l.cid) AS totalCat "
+				+ "FROM categories AS c " + "INNER JOIN lands AS l " + "ON c.id = l.cid " + "GROUP BY c.id "
+				+ "HAVING COUNT(l.cid) " + "ORDER BY l.count_views DESC " + "LIMIT ?";
+		return jdbcTemplate.query(sql, new Object[] { CommonConstants.DEFAULT_HOT },
+				new BeanPropertyRowMapper<>(CategoryDTO.class));
+	}
 
 }

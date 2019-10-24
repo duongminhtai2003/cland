@@ -12,15 +12,7 @@
 				<img src="${pageContext.request.contextPath}/uploads/${lands.picture}" alt="" />
 				<h2>${lands.landsName}</h2>
 				<a href="${pageContext.request.contextPath }/detail/${SlugUtil.makeSlug(lands.landsName)}-${lands.id }.html"><p class="caption">${lands.landsName }</p></a>
-				</p>
 			</div>
 		</c:forEach>
-		<div class="clearfix work_pagination">
-			<nav>
-				<a class="newer floatleft" href="">-- Trang trước</a> <a
-					class="older floatright" href="">Trang kế -- ></a>
-			</nav>
-		</div>
-
 	</div>
 </div>

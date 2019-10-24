@@ -3,17 +3,15 @@
 <%@page import="edu.vinaenter.utils.SlugUtil"%>
 <%@include file="/WEB-INF/templates/taglibs.jsp"%>
 <!DOCTYPE html>
-
-
 <div class="clearfix slider">
 	<ul class="pgwSlider">
 
 		<c:forEach items="${listLandsLatest}" var="landsLatest">
-			<li><img
-				src="${pageContext.request.contextPath}/uploads/${landsLatest.picture}"
-				alt="Paris, France"
-				data-description="${landsLatest.landsName}"
-				data-large-src="${pageContext.request.contextPath}/uploads/${landsLatest.picture}" /></li>
+			<li>
+			<a href="${pageContext.request.contextPath }/detail/${SlugUtil.makeSlug(landsLatest.landsName)}-${landsLatest.id }.html">
+				<img src="${pageContext.request.contextPath}/uploads/${landsLatest.picture}" alt="Paris, France" data-description="${landsLatest.landsName}" data-large-src="${pageContext.request.contextPath}/uploads/${landsLatest.picture}" />
+			</a>
+			</li>
 		</c:forEach>
 
 	</ul>
@@ -59,21 +57,44 @@
 			</div>
 		</c:forEach>
 	</c:if>
-
-
 </div>
 
 <div class="pagination">
-	<nav>
-		<ul>
-			<li><a href=""> << </a></li>
-			<c:forEach begin="1" end="${totalPage }" var="i">
-				<li <c:if test="${page == i}"> class='active'</c:if>><a
-					href="${pageContext.request.contextPath }/home/${i}">${i }</a></li>
-			</c:forEach>
-			<li><a href=""> >> </a></li>
-		</ul>
-	</nav>
+	<div class="row">
+		<div class="col-sm-6" style="text-align: right;">
+			<div class="dataTables_paginate paging_simple_numbers"
+				id="dataTables-example_paginate">
+				<ul class="pagination">
+					<c:if test="${numberOfPage > 1 }">
+						<c:if test="${currentPage > 1 }">
+							<li class="paginate_button previous"
+								aria-controls="dataTables-example" tabindex="0"
+								id="dataTables-example_previous"><a
+								href="${pageContext.request.contextPath}/home/${currentPage-1}"><<</a></li>
+						</c:if>
+						<c:forEach begin="1" end="${numberOfPage }" var="i">
+							<c:if test="${currentPage == i }">
+								<c:set var="active" value="background: yellow;" />
+							</c:if>
+							<c:if test="${currentPage != i }">
+								<c:set var="active" value="" />
+							</c:if>
+							<li class="paginate_button ${active }"
+								aria-controls="dataTables-example" tabindex="0"><a
+								style="${active}"
+								href="${pageContext.request.contextPath}/home/${i}">${i }</a></li>
+						</c:forEach>
+						<c:if test="${currentPage < numberOfPage }">
+							<li class="paginate_button next"
+								aria-controls="dataTables-example" tabindex="0"
+								id="dataTables-example_next"><a
+								href="${pageContext.request.contextPath}/home/${currentPage + 1}">>></a></li>
+						</c:if>
+					</c:if>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 
 

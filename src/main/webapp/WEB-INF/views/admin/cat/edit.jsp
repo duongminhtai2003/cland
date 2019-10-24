@@ -15,6 +15,7 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
+								<form:errors path="cat.name" cssStyle="color:red; font-size: 20px"/> <br>
 									<label for="name">Tên danh mục</label> <input type="text"
 										class="form-control" placeholder="Nhập tên danh mục"
 										name="name" value="${cat.name }">
@@ -24,7 +25,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-12">
-								<input type="submit" value="Thêm" class="btn btn-success" /> <input
+								<input type="submit" value="Sửa" class="btn btn-success" /> <input
 									type="reset" value="Nhập lại" class="btn btn-default" />
 							</div>
 						</div>

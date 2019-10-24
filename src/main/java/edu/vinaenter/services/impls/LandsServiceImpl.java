@@ -40,9 +40,9 @@ public class LandsServiceImpl implements LandsService {
 	}
 
 	@Override
-	public List<LandsDTO> findAllByStrPagination(String str, int offset) {
+	public List<LandsDTO> findAllByStrPagination(String str, int offset, String option) {
 		// TODO Auto-generated method stub
-		return landsDAO.findAllByStrPagination(str, offset);
+		return landsDAO.findAllByStrPagination(str, offset, option);
 	}
 
 	@Override
@@ -73,6 +73,12 @@ public class LandsServiceImpl implements LandsService {
 	public List<LandsDTO> findItemsLatest() {
 		// TODO Auto-generated method stub
 		return landsDAO.findItemsLatest();
+	}
+
+	@Override
+	public int delItemByCid(int cid) {
+		// TODO Auto-generated method stub
+		return landsDAO.delItemsByCid(cid);
 	}
 
 }

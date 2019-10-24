@@ -1,5 +1,7 @@
 package edu.vinaenter.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -16,9 +18,14 @@ import lombok.ToString;
 public class Users {
 
 	private int id;
+	@NotEmpty(message = "không được để trống")
 	private String username;
+	@NotEmpty(message = "không được để trống")
 	private String fullname;
-	private String remember_token;
+	@NotEmpty(message = "không được để trống")
 	private String password;
-		// TODO Auto-generated method stub
+	private int enable;
+	private int roleid;
+	private String roleName;
+	
 }

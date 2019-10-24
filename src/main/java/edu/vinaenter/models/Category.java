@@ -1,5 +1,7 @@
 package edu.vinaenter.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -16,6 +18,6 @@ import lombok.ToString;
 public class Category {
 
 	private int id;
-	
+	@NotEmpty(message = "không được để trống")
 	private String name;
 }

@@ -17,7 +17,6 @@ public class LandsDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	// Tim kiem phan trang
 	public List<LandsDTO> findAllPagination(int offset) {
 		String sql = "SELECT l.id, "
 			+ "l.name AS landsName, "
@@ -96,6 +95,11 @@ public class LandsDAO {
 		String sql = "DELETE FROM lands WHERE id = ?";
 		return jdbcTemplate.update(sql, new Object[] { id });
 	}
+	
+	public int delItemsByCid(int cid) {
+		String sql = "DELETE FROM lands WHERE cid = ?";
+		return jdbcTemplate.update(sql, new Object[] { cid });
+	}
 
 	public LandsDTO findItemById(int id) {
 		String sql = "SELECT l.id, "
@@ -115,21 +119,54 @@ public class LandsDAO {
 		return jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper<>(LandsDTO.class));
 	}
 	
-	public List<LandsDTO> findAllByStrPagination(String str, int offset) {
-		String sql = "SELECT l.id, "
-				+ "l.name AS landsName, "
-				+ "description, "
-				+ "l.date_create AS dateCreate, "
-				+ "l.cid, "
-				+ "c.name AS catName, "
-				+ "picture, area, "
-				+ "address, "
-				+ "count_views AS countViews "
-				+ "FROM lands AS l "
-				+ "INNER JOIN categories AS c "
-				+ "ON c.id = l.cid "
-				+ "WHERE l.name LIKE ? "
-				+ "LIMIT ?, ?";
+	public List<LandsDTO> findAllByStrPagination(String str, int offset, String option) {
+		String sql = "";
+		if("landsName".equals(option)) {
+				sql = "SELECT l.id, "
+					+ "l.name AS landsName, "
+					+ "description, "
+					+ "l.date_create AS dateCreate, "
+					+ "l.cid, "
+					+ "c.name AS catName, "
+					+ "picture, area, "
+					+ "address, "
+					+ "count_views AS countViews "
+					+ "FROM lands AS l "
+					+ "INNER JOIN categories AS c "
+					+ "ON c.id = l.cid "
+					+ "WHERE l.name LIKE ? "
+					+ "LIMIT ?, ?";
+		}else if("catName".equals(option)) {
+				sql = "SELECT l.id, "
+					+ "l.name AS landsName, "
+					+ "description, "
+					+ "l.date_create AS dateCreate, "
+					+ "l.cid, "
+					+ "c.name AS catName, "
+					+ "picture, area, "
+					+ "address, "
+					+ "count_views AS countViews "
+					+ "FROM lands AS l "
+					+ "INNER JOIN categories AS c "
+					+ "ON c.id = l.cid "
+					+ "WHERE c.name LIKE ? "
+					+ "LIMIT ?, ?";
+		}else if("address".equals(option)) {
+			sql = "SELECT l.id, "
+					+ "l.name AS landsName, "
+					+ "description, "
+					+ "l.date_create AS dateCreate, "
+					+ "l.cid, "
+					+ "c.name AS catName, "
+					+ "picture, area, "
+					+ "address, "
+					+ "count_views AS countViews "
+					+ "FROM lands AS l "
+					+ "INNER JOIN categories AS c "
+					+ "ON c.id = l.cid "
+					+ "WHERE address LIKE ? "
+					+ "LIMIT ?, ?";
+		}
 		return jdbcTemplate.query(sql, new Object[] {"%"+str+"%", offset, CommonConstants.DEFAULT_PAGING_SIZE}, new BeanPropertyRowMapper<>(LandsDTO.class));
 	}
 	

@@ -17,17 +17,6 @@
 					aria-hidden="true"></span>&nbsp;Thêm</a>
 
 			</div>
-			<form action="${pageContext.request.contextPath}/admin/cat/search" method="get">
-				<div class="col-md-4">
-				<div class="input-group form">
-					<input type="text" name="str"  class="form-control"
-						placeholder="Search..."> <span class="input-group-btn">
-						<input class="btn btn-primary" type="submit" value="Search">
-					</span>
-				</div>
-			</div>
-			</form>
-			
 		</div>
 		<h1>${msg }</h1>
 		<div class="row">
@@ -51,7 +40,7 @@
 										value="${pageContext.request.contextPath}/admin/cat/del/${cat.id}" />
 									<tr class="odd gradeX">
 										<td>${cat.id }</td>
-										<td>${cat.name }</td>
+										<td>${cat.catName }</td>
 										<td class="center text-center"><a href="${urlEdit }"
 											title="" class="btn btn-primary"> <span
 												class="glyphicon glyphicon-pencil "></span> Sửa

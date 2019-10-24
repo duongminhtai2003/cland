@@ -10,18 +10,8 @@
 		    <li><a href="${pageContext.request.contextPath }/admin/cat/index"><i class="glyphicon glyphicon-list"></i> Danh mục</a></li>
 		    <li><a href="${pageContext.request.contextPath }/admin/lands/index"><i class="glyphicon glyphicon-book"></i> Tin tức</a></li>
 		    <li><a href="${pageContext.request.contextPath }/admin/users/index" onclick="myFunction()"><i class="glyphicon glyphicon-user"></i> Người dùng</a></li>
-		    <li><a href="${pageContext.request.contextPath }/admin/contacts/index"><i class="glyphicon glyphicon-envelope"></i> Liên hệ</a></li>
-		    <li class="submenu">
-		         <a href="#">
-		            <i class="glyphicon glyphicon-list"></i> Pages
-		            <span class="caret pull-right"></span>
-		         </a>
-		         <!-- Sub menu -->
-		         <ul>
-		            <li><a href="login.html">Login</a></li>
-		            <li><a href="javascript:void(0)">Signup</a></li>
-		        </ul>
-		    </li>
+		    <li><a href="${pageContext.request.contextPath }/admin/contact/index"><i class="glyphicon glyphicon-envelope"></i> Liên hệ</a></li>
+		    <li><a href="${pageContext.request.contextPath }/admin/comment/index"><i class="glyphicon glyphicon-envelope"></i> Comment bài biết</a></li>
 		</ul>
 		<!-- /.nav-bar -->
            </div>

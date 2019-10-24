@@ -1,5 +1,4 @@
-package edu.vinaenter.services;
-
+package edu.vinaenter.models;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -12,18 +11,20 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @ToString
 public class Contact {
+
 	private int id;
-	@NotEmpty
+	
+	@NotEmpty(message = "không được để trống")
 	private String fullname;
-	@NotEmpty
+	@NotEmpty(message = "không được để trống")
 	private String email;
-	@NotEmpty
+	@NotEmpty(message = "không được để trống")
 	private String subject;
-	@NotEmpty
+	@NotEmpty(message = "không được để trống")
 	private String content;
 }

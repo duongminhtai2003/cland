@@ -1,4 +1,4 @@
-package edu.vinaenter.models;
+package edu.vinaenter.model.bean;
 
 import java.sql.Timestamp;
 

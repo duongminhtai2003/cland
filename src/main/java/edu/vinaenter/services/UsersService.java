@@ -2,7 +2,7 @@ package edu.vinaenter.services;
 
 import java.util.List;
 
-import edu.vinaenter.models.Users;
+import edu.vinaenter.model.bean.Users;
 
 public interface UsersService {
 

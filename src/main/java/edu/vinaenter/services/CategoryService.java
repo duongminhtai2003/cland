@@ -3,7 +3,7 @@ package edu.vinaenter.services;
 import java.util.List;
 
 import edu.vinaenter.dto.CategoryDTO;
-import edu.vinaenter.models.Category;
+import edu.vinaenter.model.bean.Category;
 
 public interface CategoryService {
 	

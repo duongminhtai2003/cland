@@ -6,9 +6,8 @@
 
 
 <div class="clearfix content">
-
 	<div class="contact_us">
-
+	
 		<h1>Liên hệ với chúng tôi</h1>
 
 		<p>
@@ -16,7 +15,7 @@
 			Xương, Liên Chiểu, Đà Nẵng<br /> Web: <a
 				href="http://vinaenter.edu.vn" title="">www.vinaenter.edu.vn</a>
 		</p>
-
+		<h1 style="color: red">${msg }</h1>
 		<form action="${pageContext.request.contextPath }/contact/add" method="POST">
 			<p>
 				<form:errors path="contact.fullname" cssStyle="color:red; font-size: 20px"/> <br>

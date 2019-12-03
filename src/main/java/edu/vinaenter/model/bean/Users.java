@@ -1,4 +1,4 @@
-package edu.vinaenter.models;
+package edu.vinaenter.model.bean;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -15,16 +15,17 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class Contact {
+public class Users {
 
 	private int id;
-	
+	@NotEmpty(message = "không được để trống")
+	private String username;
 	@NotEmpty(message = "không được để trống")
 	private String fullname;
 	@NotEmpty(message = "không được để trống")
-	private String email;
-	@NotEmpty(message = "không được để trống")
-	private String subject;
-	@NotEmpty(message = "không được để trống")
-	private String content;
+	private String password;
+	private int enable;
+	private int roleid;
+	private String roleName;
+	
 }

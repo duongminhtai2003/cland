@@ -1,8 +1,4 @@
-package edu.vinaenter.models;
-
-import java.sql.Timestamp;
-
-import javax.validation.constraints.Digits;
+package edu.vinaenter.model.bean;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -19,18 +15,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class Lands {
+public class Contact {
+
 	private int id;
+	
 	@NotEmpty(message = "không được để trống")
-	private String name;
+	private String fullname;
 	@NotEmpty(message = "không được để trống")
-	private String description;
-	private Timestamp date_create;
-	private Category cat;
-	private String picture;
-	@Digits(integer = 11, fraction = 0)
-	private int area;
+	private String email;
 	@NotEmpty(message = "không được để trống")
-	private String address;
-	private int count_views;
+	private String subject;
+	@NotEmpty(message = "không được để trống")
+	private String content;
 }

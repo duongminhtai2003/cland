@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.vinaenter.daos.CommentDAO;
-import edu.vinaenter.models.Comment;
+import edu.vinaenter.model.bean.Comment;
+import edu.vinaenter.model.dao.CommentDAO;
 import edu.vinaenter.services.CommentService;
 
 @Service

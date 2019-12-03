@@ -2,7 +2,7 @@ package edu.vinaenter.services;
 
 import java.util.List;
 
-import edu.vinaenter.models.Comment;
+import edu.vinaenter.model.bean.Comment;
 
 public interface CommentService {
 	List<Comment> findAllPagination(int offset);

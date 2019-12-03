@@ -1,4 +1,4 @@
-package edu.vinaenter.daos;
+package edu.vinaenter.model.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import edu.vinaenter.constants.CommonConstants;
 import edu.vinaenter.dto.CategoryDTO;
-import edu.vinaenter.models.Category;
+import edu.vinaenter.model.bean.Category;
 
 @Repository
 public class CategoryDao {

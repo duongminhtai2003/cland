@@ -2,7 +2,7 @@ package edu.vinaenter.services;
 
 import java.util.List;
 
-import edu.vinaenter.models.Contact;
+import edu.vinaenter.model.bean.Contact;
 
 public interface ContactService {
 

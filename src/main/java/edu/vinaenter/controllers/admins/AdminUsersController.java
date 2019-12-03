@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.vinaenter.constants.CommonConstants;
 import edu.vinaenter.constants.UrlConstants;
-import edu.vinaenter.models.Users;
+import edu.vinaenter.model.bean.Users;
 import edu.vinaenter.services.UsersService;
 
 @Controller

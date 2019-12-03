@@ -21,8 +21,8 @@ import edu.vinaenter.constants.CommonConstants;
 import edu.vinaenter.constants.UrlConstants;
 import edu.vinaenter.dto.CategoryDTO;
 import edu.vinaenter.dto.LandsDTO;
-import edu.vinaenter.models.Comment;
-import edu.vinaenter.models.Contact;
+import edu.vinaenter.model.bean.Comment;
+import edu.vinaenter.model.bean.Contact;
 import edu.vinaenter.services.CategoryService;
 import edu.vinaenter.services.CommentService;
 import edu.vinaenter.services.ContactService;
@@ -134,10 +134,10 @@ public class ClandHomeController {
 		int check = contactService.addItem(contact);
 		if (check > 0) {
 			ra.addFlashAttribute("msg", messageSource.getMessage("home.contact.add.success", null, null));
-			return "redirect:" + UrlConstants.URL_CLAND_HOME + UrlConstants.URL_CLAND_CONTACT;
+			return "redirect:" + UrlConstants.URL_CLAND_CONTACT;
 		}
 		ra.addFlashAttribute("msg", messageSource.getMessage("home.contact.add.fail", null, null));
-		return "redirect:" + UrlConstants.URL_CLAND_HOME + UrlConstants.URL_CLAND_CONTACT;
+		return "redirect:" + UrlConstants.URL_CLAND_CONTACT;
 	}
 
 	// add comment
@@ -154,6 +154,6 @@ public class ClandHomeController {
 			return "cland.cland.displayComment";
 		}
 		ra.addFlashAttribute("msg", messageSource.getMessage("home.comment.add.fail", null, null));
-		return "redirect:" + UrlConstants.URL_CLAND_HOME + UrlConstants.URL_CLAND_DETAIL;
+		return "redirect:" + UrlConstants.URL_CLAND_DETAIL;
 	}
 }

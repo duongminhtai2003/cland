@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.vinaenter.daos.LandsDAO;
 import edu.vinaenter.dto.LandsDTO;
-import edu.vinaenter.models.Lands;
+import edu.vinaenter.model.bean.Lands;
+import edu.vinaenter.model.dao.LandsDAO;
 import edu.vinaenter.services.LandsService;
 
 @Service

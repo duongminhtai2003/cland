@@ -14,8 +14,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.vinaenter.constants.CommonConstants;
 import edu.vinaenter.constants.UrlConstants;
-import edu.vinaenter.models.Comment;
-import edu.vinaenter.models.Contact;
+import edu.vinaenter.model.bean.Comment;
+import edu.vinaenter.model.bean.Contact;
 import edu.vinaenter.services.CommentService;
 
 @Controller

@@ -1,4 +1,4 @@
-package edu.vinaenter.daos;
+package edu.vinaenter.model.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import edu.vinaenter.constants.CommonConstants;
 import edu.vinaenter.dto.LandsDTO;
-import edu.vinaenter.models.Lands;
+import edu.vinaenter.model.bean.Lands;
 
 @Repository
 public class LandsDAO {

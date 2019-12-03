@@ -1,4 +1,4 @@
-package edu.vinaenter.daos;
+package edu.vinaenter.model.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import edu.vinaenter.constants.CommonConstants;
-import edu.vinaenter.models.Users;
+import edu.vinaenter.model.bean.Users;
 
 @Repository
 public class UsersDao {

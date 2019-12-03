@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.vinaenter.daos.CategoryDao;
 import edu.vinaenter.dto.CategoryDTO;
-import edu.vinaenter.models.Category;
+import edu.vinaenter.model.bean.Category;
+import edu.vinaenter.model.dao.CategoryDao;
 import edu.vinaenter.services.CategoryService;
 
 @Service

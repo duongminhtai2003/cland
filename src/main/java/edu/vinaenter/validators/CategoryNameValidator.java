@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import edu.vinaenter.models.Category;
+import edu.vinaenter.model.bean.Category;
 import edu.vinaenter.utils.CharacterUtil;
 
 @Component

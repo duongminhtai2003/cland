@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.vinaenter.daos.ContactDao;
-import edu.vinaenter.models.Contact;
+import edu.vinaenter.model.bean.Contact;
+import edu.vinaenter.model.dao.ContactDao;
 import edu.vinaenter.services.ContactService;
 
 @Service

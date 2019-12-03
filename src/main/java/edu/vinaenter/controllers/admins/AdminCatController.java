@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.vinaenter.constants.UrlConstants;
 import edu.vinaenter.dto.CategoryDTO;
-import edu.vinaenter.models.Category;
+import edu.vinaenter.model.bean.Category;
 import edu.vinaenter.services.CategoryService;
 import edu.vinaenter.services.LandsService;
 import edu.vinaenter.validators.CategoryNameValidator;

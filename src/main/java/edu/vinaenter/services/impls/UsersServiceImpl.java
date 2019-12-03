@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.vinaenter.daos.UsersDao;
-import edu.vinaenter.models.Users;
+import edu.vinaenter.model.bean.Users;
+import edu.vinaenter.model.dao.UsersDao;
 import edu.vinaenter.services.UsersService;
 
 @Service

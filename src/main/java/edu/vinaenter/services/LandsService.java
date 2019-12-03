@@ -3,7 +3,7 @@ package edu.vinaenter.services;
 import java.util.List;
 
 import edu.vinaenter.dto.LandsDTO;
-import edu.vinaenter.models.Lands;
+import edu.vinaenter.model.bean.Lands;
 
 public interface LandsService {
 	
